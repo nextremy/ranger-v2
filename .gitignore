@@ -1,5 +1,6 @@
 .env*.local
 .next
+*.db
 build
 next-env.d.ts
 node_modules
