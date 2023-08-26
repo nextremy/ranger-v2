@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/button";
 import { Form } from "@/components/form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
@@ -124,12 +125,9 @@ export default function Register() {
           {form.formState.errors.confirmPassword.message}
         </Form.Error>
       ) : null}
-      <button
-        className="mt-8 h-12 rounded-md bg-blue-700 font-bold text-gray-100 transition-colors duration-150 hover:bg-blue-800 dark:bg-blue-300 dark:text-gray-900 dark:hover:bg-blue-400"
-        type="submit"
-      >
+      <Button className="mt-8" type="submit">
         Register
-      </button>
+      </Button>
       <p className="mt-4 text-center">
         Already have an account?{" "}
         <Link
