@@ -1,3 +1,4 @@
+import headlessUIPlugin from "@headlessui/tailwindcss";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -7,6 +8,6 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: { extend: {} },
-  plugins: [],
+  plugins: [headlessUIPlugin],
 };
 export default config;
