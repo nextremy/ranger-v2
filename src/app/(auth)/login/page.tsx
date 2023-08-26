@@ -38,7 +38,7 @@ export default function Login() {
         form.setError("root", { message: "Unknown server error" });
         return;
       }
-      router.replace("/");
+      router.replace("/home");
     })(event);
   };
 
