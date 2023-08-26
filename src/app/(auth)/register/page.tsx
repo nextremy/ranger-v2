@@ -68,7 +68,7 @@ export default function Register() {
       onSubmit={handleSubmit}
     >
       <h1 className="text-center text-xl font-bold">Register</h1>
-      <Form.Label className="mt-8" htmlFor={usernameInputId}>
+      <Form.Label className="mt-4" htmlFor={usernameInputId}>
         Username
       </Form.Label>
       <Form.TextInput
@@ -125,7 +125,7 @@ export default function Register() {
         </Form.Error>
       ) : null}
       <button
-        className="mt-12 h-12 rounded-md bg-blue-700 font-bold text-gray-100 transition-colors duration-150 hover:bg-blue-800 dark:bg-blue-300 dark:text-gray-900 dark:hover:bg-blue-400"
+        className="mt-8 h-12 rounded-md bg-blue-700 font-bold text-gray-100 transition-colors duration-150 hover:bg-blue-800 dark:bg-blue-300 dark:text-gray-900 dark:hover:bg-blue-400"
         type="submit"
       >
         Register
