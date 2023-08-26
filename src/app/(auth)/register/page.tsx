@@ -68,7 +68,7 @@ export default function Register() {
       onSubmit={handleSubmit}
     >
       <h1 className="text-center text-xl font-bold">Register</h1>
-      <Form.Label className="mt-4" htmlFor={usernameInputId}>
+      <Form.Label className="mt-8" htmlFor={usernameInputId}>
         Username
       </Form.Label>
       <Form.TextInput
