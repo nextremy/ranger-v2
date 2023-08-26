@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "dotenv -e .env.dev next dev",
     "dev:db-sync": "dotenv -e .env.dev -- npx prisma db push && npx prisma generate",
     "build": "next build",
     "start": "next start",
