@@ -110,10 +110,7 @@ export default function Register() {
           {form.formState.errors.password.message}
         </Form.Error>
       ) : null}
-      <Form.Label
-        className="mt-8 duration-150"
-        htmlFor={confirmPasswordInputId}
-      >
+      <Form.Label className="mt-8" htmlFor={confirmPasswordInputId}>
         Confirm password
       </Form.Label>
       <Form.TextInput
