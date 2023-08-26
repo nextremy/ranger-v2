@@ -128,6 +128,11 @@ export default function Register() {
       <Button className="mt-8" type="submit">
         Register
       </Button>
+      {form.formState.errors.root ? (
+        <Form.Error className="mt-4 text-center">
+          {form.formState.errors.root.message}
+        </Form.Error>
+      ) : null}
       <p className="mt-4 text-center">
         Already have an account?{" "}
         <Link
