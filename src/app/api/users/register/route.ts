@@ -9,6 +9,7 @@ const bodySchema = z.object({
     .min(1)
     .max(12)
     .regex(/^[a-z0-9_]*/),
+  displayName: z.string().min(1).max(24),
   password: z.string().min(8).max(256),
 });
 
@@ -27,7 +28,11 @@ export async function POST(request: NextRequest) {
   }
   const passwordHashAndSalt = await argon2.hash(body.password);
   await db.user.create({
-    data: { username: body.username, password: passwordHashAndSalt },
+    data: {
+      username: body.username,
+      displayName: body.displayName,
+      password: passwordHashAndSalt,
+    },
   });
 
   return NextResponse.json(null);
