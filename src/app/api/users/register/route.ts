@@ -13,11 +13,11 @@ const bodySchema = z.object({
 });
 
 export async function POST(request: NextRequest) {
-  const bodyParseResult = bodySchema.safeParse(await request.json());
-  if (!bodyParseResult.success) {
+  const bodyParse = bodySchema.safeParse(await request.json());
+  if (!bodyParse.success) {
     return NextResponse.json(null, { status: 400 });
   }
-  const body = bodyParseResult.data;
+  const body = bodyParse.data;
 
   const usernameIsTaken = Boolean(
     await db.user.findUnique({ where: { username: body.username } }),
