@@ -8,8 +8,12 @@ datasource db {
 }
 
 model User {
-  id          String @id @default(cuid())
-  username    String @unique
-  password    String
-  displayName String
+  id             String  @id @default(cuid())
+  username       String  @unique
+  password       String
+  avatarFilename String?
+  displayName    String
+  description    String  @default("")
+  followers      User[]  @relation(name: "UserFollowers")
+  following      User[]  @relation(name: "UserFollowers")
 }
