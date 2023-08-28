@@ -77,7 +77,7 @@ export function Nav() {
           )}
           href={`/profiles/${session.username}`}
         >
-          {pathname === "/settings" ? (
+          {pathname === `/profiles/${session.username}` ? (
             <UserIconSolid className="h-6 w-6" />
           ) : (
             <UserIconOutline className="h-6 w-6" />
