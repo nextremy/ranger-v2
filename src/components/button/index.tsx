@@ -9,6 +9,8 @@ const button = cva(
       intent: {
         primary:
           "bg-blue-700 font-bold text-gray-100 duration-150 hover:bg-blue-800 disabled:hover:bg-blue-700 dark:bg-blue-300 dark:text-gray-900 hover:dark:bg-blue-400 disabled:hover:dark:bg-blue-300",
+        secondary:
+          "bg-gray-200 duration-150 hover:bg-gray-300 disabled:hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 disabled:hover:dark:bg-gray-800",
       },
       size: {
         small: "h-12",
