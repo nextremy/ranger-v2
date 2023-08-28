@@ -21,7 +21,7 @@ export default function Login() {
   const usernameInputId = useId();
   const passwordInputId = useId();
   const form = useForm<FormSchema>({ resolver: zodResolver(formSchema) });
-  const { setSession } = useSessionStore();
+  const setSession = useSessionStore((state) => state.setSession);
   const router = useRouter();
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
