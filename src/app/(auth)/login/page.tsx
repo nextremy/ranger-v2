@@ -1,7 +1,9 @@
 "use client";
 
+import { Session } from "@/app/api/_types/session";
 import { Button } from "@/components/button";
 import { Form } from "@/components/form";
+import { useSessionStore } from "@/stores/session";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -19,6 +21,7 @@ export default function Login() {
   const usernameInputId = useId();
   const passwordInputId = useId();
   const form = useForm<FormSchema>({ resolver: zodResolver(formSchema) });
+  const { setSession } = useSessionStore();
   const router = useRouter();
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
@@ -28,6 +31,7 @@ export default function Login() {
         method: "POST",
         body: JSON.stringify(data),
       });
+
       if (!response.ok) {
         if (response.status === 401) {
           form.setError("root", { message: "Invalid username or password" });
@@ -36,6 +40,10 @@ export default function Login() {
         form.setError("root", { message: "Unknown server error" });
         return;
       }
+
+      const session: Session = await response.json();
+      setSession(session);
+
       router.replace("/home");
     })(event);
   };
