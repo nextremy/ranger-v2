@@ -101,10 +101,10 @@ export default function MainLayout(props: { children: ReactNode }) {
             leaveFrom="translate-x-0"
             leaveTo="-translate-x-full"
           >
-            <Popover.Panel className="fixed bottom-0 left-0 top-0 w-full max-w-xs border-r border-gray-300 bg-gray-100 p-2 dark:border-gray-700 dark:bg-gray-900">
+            <Popover.Panel className="fixed bottom-0 left-0 top-0 w-full max-w-xs border-r border-gray-300 bg-gray-100 dark:border-gray-700 dark:bg-gray-900">
               <Popover.Button
                 as={Link}
-                className="flex h-14 items-center gap-4 rounded-md px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800"
+                className="flex h-14 items-center gap-4 px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800"
                 href="/home"
               >
                 <HomeIconOutline className="h-6 w-6" />
@@ -112,7 +112,7 @@ export default function MainLayout(props: { children: ReactNode }) {
               </Popover.Button>
               <Popover.Button
                 as={Link}
-                className="flex h-14 items-center gap-4 rounded-md px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800"
+                className="flex h-14 items-center gap-4 px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800"
                 href="/search"
               >
                 <MagnifyingGlassIcon className="h-6 w-6" />
@@ -120,7 +120,7 @@ export default function MainLayout(props: { children: ReactNode }) {
               </Popover.Button>
               <Popover.Button
                 as={Link}
-                className="flex h-14 items-center gap-4 rounded-md px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800"
+                className="flex h-14 items-center gap-4 px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800"
                 href="/notifications"
               >
                 <BellIcon className="h-6 w-6" />
@@ -128,7 +128,7 @@ export default function MainLayout(props: { children: ReactNode }) {
               </Popover.Button>
               <Popover.Button
                 as={Link}
-                className="flex h-14 items-center gap-4 rounded-md px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800"
+                className="flex h-14 items-center gap-4 px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800"
                 href="/settings"
               >
                 <Cog6ToothIcon className="h-6 w-6" />
