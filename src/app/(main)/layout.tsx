@@ -25,58 +25,60 @@ export default function MainLayout(props: { children: ReactNode }) {
   return (
     <div className="mx-auto flex h-screen max-w-5xl divide-x divide-gray-300 border-x border-gray-300 dark:divide-gray-700 dark:border-gray-700">
       <div className="hidden w-80 flex-shrink-0 p-2 md:block">
-        <Link
-          className={`flex h-14 items-center gap-4 rounded-md px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800 ${cx(
-            pathname === "/home" && "font-bold",
-          )}`}
-          href="/home"
-        >
-          {pathname === "/home" ? (
-            <HomeIconSolid className="h-6 w-6" />
-          ) : (
-            <HomeIconOutline className="h-6 w-6" />
-          )}
-          Home
-        </Link>
-        <Link
-          className={`flex h-14 items-center gap-4 rounded-md px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800 ${cx(
-            pathname === "/search" && "font-bold",
-          )}`}
-          href="/search"
-        >
-          <MagnifyingGlassIcon
-            className={`h-6 w-6 ${cx(
-              pathname === "/search" && "stroke-[3px]",
+        <nav>
+          <Link
+            className={`flex h-14 items-center gap-4 rounded-md px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800 ${cx(
+              pathname === "/home" && "font-bold",
             )}`}
-          />
-          Search
-        </Link>
-        <Link
-          className={`flex h-14 items-center gap-4 rounded-md px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800 ${cx(
-            pathname === "/notifications" && "font-bold",
-          )}`}
-          href="/notifications"
-        >
-          {pathname === "/notifications" ? (
-            <BellIconSolid className="h-6 w-6" />
-          ) : (
-            <BellIconOutline className="h-6 w-6" />
-          )}
-          Notifications
-        </Link>
-        <Link
-          className={`flex h-14 items-center gap-4 rounded-md px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800 ${cx(
-            pathname === "/settings" && "font-bold",
-          )}`}
-          href="/settings"
-        >
-          {pathname === "/settings" ? (
-            <Cog6ToothIconSolid className="h-6 w-6" />
-          ) : (
-            <Cog6ToothIconOutline className="h-6 w-6" />
-          )}
-          Settings
-        </Link>
+            href="/home"
+          >
+            {pathname === "/home" ? (
+              <HomeIconSolid className="h-6 w-6" />
+            ) : (
+              <HomeIconOutline className="h-6 w-6" />
+            )}
+            Home
+          </Link>
+          <Link
+            className={`flex h-14 items-center gap-4 rounded-md px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800 ${cx(
+              pathname === "/search" && "font-bold",
+            )}`}
+            href="/search"
+          >
+            <MagnifyingGlassIcon
+              className={`h-6 w-6 ${cx(
+                pathname === "/search" && "stroke-[3px]",
+              )}`}
+            />
+            Search
+          </Link>
+          <Link
+            className={`flex h-14 items-center gap-4 rounded-md px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800 ${cx(
+              pathname === "/notifications" && "font-bold",
+            )}`}
+            href="/notifications"
+          >
+            {pathname === "/notifications" ? (
+              <BellIconSolid className="h-6 w-6" />
+            ) : (
+              <BellIconOutline className="h-6 w-6" />
+            )}
+            Notifications
+          </Link>
+          <Link
+            className={`flex h-14 items-center gap-4 rounded-md px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800 ${cx(
+              pathname === "/settings" && "font-bold",
+            )}`}
+            href="/settings"
+          >
+            {pathname === "/settings" ? (
+              <Cog6ToothIconSolid className="h-6 w-6" />
+            ) : (
+              <Cog6ToothIconOutline className="h-6 w-6" />
+            )}
+            Settings
+          </Link>
+        </nav>
       </div>
       <div className="grow">
         <Popover>
@@ -102,38 +104,40 @@ export default function MainLayout(props: { children: ReactNode }) {
             leaveTo="-translate-x-full"
           >
             <Popover.Panel className="fixed bottom-0 left-0 top-0 w-full max-w-xs border-r border-gray-300 bg-gray-100 dark:border-gray-700 dark:bg-gray-900">
-              <Popover.Button
-                as={Link}
-                className="flex h-14 items-center gap-4 px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800"
-                href="/home"
-              >
-                <HomeIconOutline className="h-6 w-6" />
-                Home
-              </Popover.Button>
-              <Popover.Button
-                as={Link}
-                className="flex h-14 items-center gap-4 px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800"
-                href="/search"
-              >
-                <MagnifyingGlassIcon className="h-6 w-6" />
-                Search
-              </Popover.Button>
-              <Popover.Button
-                as={Link}
-                className="flex h-14 items-center gap-4 px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800"
-                href="/notifications"
-              >
-                <BellIcon className="h-6 w-6" />
-                Notifications
-              </Popover.Button>
-              <Popover.Button
-                as={Link}
-                className="flex h-14 items-center gap-4 px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800"
-                href="/settings"
-              >
-                <Cog6ToothIcon className="h-6 w-6" />
-                Settings
-              </Popover.Button>
+              <nav>
+                <Popover.Button
+                  as={Link}
+                  className="flex h-14 items-center gap-4 px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800"
+                  href="/home"
+                >
+                  <HomeIconOutline className="h-6 w-6" />
+                  Home
+                </Popover.Button>
+                <Popover.Button
+                  as={Link}
+                  className="flex h-14 items-center gap-4 px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800"
+                  href="/search"
+                >
+                  <MagnifyingGlassIcon className="h-6 w-6" />
+                  Search
+                </Popover.Button>
+                <Popover.Button
+                  as={Link}
+                  className="flex h-14 items-center gap-4 px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800"
+                  href="/notifications"
+                >
+                  <BellIcon className="h-6 w-6" />
+                  Notifications
+                </Popover.Button>
+                <Popover.Button
+                  as={Link}
+                  className="flex h-14 items-center gap-4 px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800"
+                  href="/settings"
+                >
+                  <Cog6ToothIcon className="h-6 w-6" />
+                  Settings
+                </Popover.Button>
+              </nav>
             </Popover.Panel>
           </Transition>
         </Popover>
