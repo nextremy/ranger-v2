@@ -21,9 +21,10 @@ export function Nav() {
   return (
     <nav className="p-2">
       <Link
-        className={`flex h-14 items-center gap-4 rounded-md px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800 ${cx(
+        className={cx(
+          "flex h-14 items-center gap-4 rounded-md px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800",
           pathname === "/home" && "font-bold",
-        )}`}
+        )}
         href="/home"
       >
         {pathname === "/home" ? (
@@ -34,9 +35,10 @@ export function Nav() {
         Home
       </Link>
       <Link
-        className={`flex h-14 items-center gap-4 rounded-md px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800 ${cx(
+        className={cx(
+          "flex h-14 items-center gap-4 rounded-md px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800",
           pathname === "/search" && "font-bold",
-        )}`}
+        )}
         href="/search"
       >
         <MagnifyingGlassIcon
@@ -45,9 +47,10 @@ export function Nav() {
         Search
       </Link>
       <Link
-        className={`flex h-14 items-center gap-4 rounded-md px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800 ${cx(
+        className={cx(
+          "flex h-14 items-center gap-4 rounded-md px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800",
           pathname === "/notifications" && "font-bold",
-        )}`}
+        )}
         href="/notifications"
       >
         {pathname === "/notifications" ? (
@@ -58,9 +61,10 @@ export function Nav() {
         Notifications
       </Link>
       <Link
-        className={`flex h-14 items-center gap-4 rounded-md px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800 ${cx(
+        className={cx(
+          "flex h-14 items-center gap-4 rounded-md px-4 text-lg transition-colors duration-150 hover:bg-gray-200 hover:dark:bg-gray-800",
           pathname === "/settings" && "font-bold",
-        )}`}
+        )}
         href="/settings"
       >
         {pathname === "/settings" ? (
