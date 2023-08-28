@@ -30,9 +30,7 @@ export default function Login() {
       });
       if (!response.ok) {
         if (response.status === 401) {
-          form.setError("root", {
-            message: "Invalid username or password",
-          });
+          form.setError("root", { message: "Invalid username or password" });
           return;
         }
         form.setError("root", { message: "Unknown server error" });
