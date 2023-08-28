@@ -1,3 +1,4 @@
+import { Slot } from "@radix-ui/react-slot";
 import { VariantProps, cva } from "class-variance-authority";
 import { ComponentPropsWithoutRef } from "react";
 
@@ -20,10 +21,15 @@ const button = cva("rounded-md px-4 font-semibold disabled:opacity-50", {
 });
 
 export function Button({
+  asChild,
   className,
   intent,
   size,
   ...props
-}: ComponentPropsWithoutRef<"button"> & VariantProps<typeof button>) {
-  return <button className={button({ className, intent, size })} {...props} />;
+}: { asChild?: boolean } & ComponentPropsWithoutRef<"button"> &
+  VariantProps<typeof button>) {
+  const Component = asChild ? Slot : "button";
+  return (
+    <Component className={button({ className, intent, size })} {...props} />
+  );
 }
