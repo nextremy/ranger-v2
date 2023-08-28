@@ -1,8 +1,10 @@
 import { db } from "@/prisma/client";
 import argon2 from "argon2";
 import jwt from "jsonwebtoken";
+import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
+import { Session } from "../../_types/session";
 
 const bodySchema = z.object({
   username: z.string(),
@@ -25,12 +27,12 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(null, { status: 401 });
   }
 
-  const response = new NextResponse();
   const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET!);
-  response.cookies.set("token", token, {
+  cookies().set("token", token, {
     httpOnly: true,
     sameSite: true,
     secure: true,
   });
-  return response;
+
+  return NextResponse.json<Session>({ id: user.id, username: user.username });
 }
