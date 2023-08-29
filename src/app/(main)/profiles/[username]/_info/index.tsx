@@ -8,6 +8,15 @@ import defaultAvatar from "./default-avatar.webp";
 
 export async function Info(props: { username: string }) {
   const user = await db.user.findUnique({
+    select: {
+      id: true,
+      username: true,
+      avatarFilename: true,
+      displayName: true,
+      description: true,
+      followers: { select: { _count: true } },
+      following: { select: { _count: true } },
+    },
     where: { username: props.username },
   });
   const session = getSession();
@@ -18,7 +27,7 @@ export async function Info(props: { username: string }) {
   return (
     <>
       <div className="aspect-[3] bg-gray-200 dark:bg-gray-800" />
-      <div className="relative flex justify-end p-4">
+      <div className="relative flex h-20 items-center justify-end px-4">
         <div className="absolute -top-10 left-4 h-28 w-28 rounded-lg bg-gray-100 p-1 dark:bg-gray-900 sm:-top-16 sm:h-32 sm:w-32 md:-top-20 md:h-36 md:w-36">
           <Image
             alt={`${user.displayName}'s avatar`}
