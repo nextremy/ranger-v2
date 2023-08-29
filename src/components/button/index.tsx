@@ -3,7 +3,7 @@ import { VariantProps, cva } from "class-variance-authority";
 import { ComponentPropsWithoutRef } from "react";
 
 const button = cva(
-  "block flex items-center justify-center rounded-md px-4 font-semibold disabled:opacity-50",
+  "block flex items-center justify-center gap-2 rounded-md px-4 font-semibold disabled:opacity-50",
   {
     variants: {
       intent: {
