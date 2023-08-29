@@ -1,10 +1,9 @@
-import { Button } from "@/components/button";
 import { db } from "@/prisma/client";
 import { getSession } from "@/utils/get-session";
 import Image from "next/image";
-import Link from "next/link";
 import { redirect } from "next/navigation";
 import defaultAvatar from "./default-avatar.webp";
+import { EditProfileLink } from "./edit-profile-link";
 
 export async function Info(props: { username: string }) {
   const user = await db.user.findUnique({
@@ -42,11 +41,7 @@ export async function Info(props: { username: string }) {
             width={160}
           />
         </div>
-        {session?.id === user.id ? (
-          <Button asChild intent="secondary">
-            <Link href="/edit-profile">Edit profile</Link>
-          </Button>
-        ) : null}
+        {session?.id === user.id ? <EditProfileLink /> : null}
       </div>
       <div className="px-4">
         <p className="text-xl font-bold">{user.displayName} </p>
