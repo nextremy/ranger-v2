@@ -28,7 +28,7 @@ export async function Info(props: { username: string }) {
     <>
       <div className="aspect-[3] bg-gray-200 dark:bg-gray-800" />
       <div className="relative flex h-20 items-center justify-end px-4">
-        <div className="absolute -top-10 left-4 h-28 w-28 rounded-lg bg-gray-100 p-1 dark:bg-gray-900 sm:-top-16 sm:h-32 sm:w-32 md:-top-20 md:h-36 md:w-36">
+        <div className="absolute -top-8 left-4 h-24 w-24 rounded-lg bg-gray-100 p-1 dark:bg-gray-900 sm:-top-20 sm:h-36 sm:w-36">
           <Image
             alt={`${user.displayName}'s avatar`}
             className="relative rounded-md"
